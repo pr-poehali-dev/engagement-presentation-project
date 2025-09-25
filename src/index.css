@@ -46,7 +46,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Professional Loyalty Check Color Scheme */
-    --tech-blue: 37 99% 53%; /* #2563eb - primary action color */
+    --tech-blue: 217 91% 60%; /* #3b82f6 - primary blue color */
     --dark-slate: 215 25% 27%; /* #1e293b - professional dark text */
     --steel-gray: 218 11% 65%; /* #64748b - secondary text */
     --warning-orange: 25 95% 53%; /* #f97316 - warning alerts */
@@ -107,11 +107,7 @@
 
 @layer components {
   .tech-gradient {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--tech-blue)) 0%,
-      hsl(var(--dark-slate)) 100%
-    );
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
   }
 
   .text-tech-blue {
