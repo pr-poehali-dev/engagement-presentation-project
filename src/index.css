@@ -37,20 +37,23 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Professional Loyalty Check Color Scheme */
+    --tech-blue: 37 99% 53%; /* #2563eb - primary action color */
+    --dark-slate: 215 25% 27%; /* #1e293b - professional dark text */
+    --steel-gray: 218 11% 65%; /* #64748b - secondary text */
+    --warning-orange: 25 95% 53%; /* #f97316 - warning alerts */
+    --alert-red: 0 84% 60%; /* #ef4444 - high risk alerts */
+    --data-green: 142 76% 36%; /* #16a34a - positive data */
+    --soft-blue: 215 100% 96%; /* #dbeafe - soft backgrounds */
+    --professional-gray: 210 40% 96%; /* #f1f5f9 - neutral backgrounds */
   }
 
   .dark {
@@ -104,7 +107,67 @@
 
 @layer components {
   .tech-gradient {
-    background: linear-gradient(135deg, #2563eb 0%, #1e293b 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--tech-blue)) 0%,
+      hsl(var(--dark-slate)) 100%
+    );
+  }
+
+  .text-tech-blue {
+    color: hsl(var(--tech-blue));
+  }
+
+  .text-dark-slate {
+    color: hsl(var(--dark-slate));
+  }
+
+  .text-steel-gray {
+    color: hsl(var(--steel-gray));
+  }
+
+  .text-warning-orange {
+    color: hsl(var(--warning-orange));
+  }
+
+  .text-alert-red {
+    color: hsl(var(--alert-red));
+  }
+
+  .text-data-green {
+    color: hsl(var(--data-green));
+  }
+
+  .bg-tech-blue {
+    background-color: hsl(var(--tech-blue));
+  }
+
+  .bg-dark-slate {
+    background-color: hsl(var(--dark-slate));
+  }
+
+  .bg-alert-red {
+    background-color: hsl(var(--alert-red));
+  }
+
+  .bg-warning-orange {
+    background-color: hsl(var(--warning-orange));
+  }
+
+  .bg-data-green {
+    background-color: hsl(var(--data-green));
+  }
+
+  .border-tech-blue {
+    border-color: hsl(var(--tech-blue));
+  }
+
+  .hover\:bg-tech-blue:hover {
+    background-color: hsl(var(--tech-blue));
+  }
+
+  .hover\:text-tech-blue:hover {
+    color: hsl(var(--tech-blue));
   }
 
   .data-card {
@@ -129,5 +192,49 @@
 
   .status-alert {
     @apply status-indicator bg-red-100 text-red-800;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.8s ease-out 0.2s both;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+    50% {
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+    }
   }
 }
